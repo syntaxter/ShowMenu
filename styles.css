@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-image: url(background.svg);
+  background-size: cover;
+}
+
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  border: solid black 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  position: fixed;
+  right: 0px;
+  height: 100%;
+  width: 10px;
+  background-color: black;
+  transition: 0.5s ease-in-out;
+}
+
+.contenedorText {
+  position: absolute;
+  right: 0px;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+  transition: 2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  animation: contenedor 2s ease;
+}
+
+@keyframes contenedor {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+ul {
+  position: absolute;
+  color: white;
+  font-size: 90px;
+  font-family: Montserrat;
+  list-style: none;
+  animation: contenedorTextos 4s ease;
+  left: 20%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+li {
+  color: black;
+  -webkit-text-stroke: white 2px;
+}
+
+li:hover {
+  color: white;
+  -webkit-text-stroke: white 2px;
+  -webkit-text-fill: white;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.salir {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  left: 0px;
+  top: 30px;
+}
+
+a[data-mostrar="true"] {
+  opacity: 1;
+  transition: 2s ease;
+  left: 20px;
+  top: 30px;
+}
+
+a[data-mostrar="false"] {
+  opacity: 0;
+  transition: 3s ease;
+}
+
+@keyframes contenedorTextos {
+  from {
+    opacity: 0;
+    left: 100%;
+  }
+
+  to {
+    opacity: 1;
+    left: 20%;
+  }
+}
+
+img {
+  width: 30%;
+}
+
+@keyframes zoomInt {
+  0% {
+    width: 75px;
+    height: 75px;
+  }
+
+  50% {
+    width: 100px;
+    height: 100px;
+  }
+
+  100% {
+    width: 75px;
+    height: 75px;
+  }
+}
